@@ -1,0 +1,12 @@
+C:\Repos\Rust\guessing_game\target\debug\deps\rand_core-62dc083736b100e0.rmeta: C:\Users\kodyb\.cargo\registry\src\github.com-1ecc6299db9ec823\rand_core-0.6.4\src\lib.rs C:\Users\kodyb\.cargo\registry\src\github.com-1ecc6299db9ec823\rand_core-0.6.4\src\block.rs C:\Users\kodyb\.cargo\registry\src\github.com-1ecc6299db9ec823\rand_core-0.6.4\src\error.rs C:\Users\kodyb\.cargo\registry\src\github.com-1ecc6299db9ec823\rand_core-0.6.4\src\impls.rs C:\Users\kodyb\.cargo\registry\src\github.com-1ecc6299db9ec823\rand_core-0.6.4\src\le.rs C:\Users\kodyb\.cargo\registry\src\github.com-1ecc6299db9ec823\rand_core-0.6.4\src\os.rs
+
+C:\Repos\Rust\guessing_game\target\debug\deps\librand_core-62dc083736b100e0.rlib: C:\Users\kodyb\.cargo\registry\src\github.com-1ecc6299db9ec823\rand_core-0.6.4\src\lib.rs C:\Users\kodyb\.cargo\registry\src\github.com-1ecc6299db9ec823\rand_core-0.6.4\src\block.rs C:\Users\kodyb\.cargo\registry\src\github.com-1ecc6299db9ec823\rand_core-0.6.4\src\error.rs C:\Users\kodyb\.cargo\registry\src\github.com-1ecc6299db9ec823\rand_core-0.6.4\src\impls.rs C:\Users\kodyb\.cargo\registry\src\github.com-1ecc6299db9ec823\rand_core-0.6.4\src\le.rs C:\Users\kodyb\.cargo\registry\src\github.com-1ecc6299db9ec823\rand_core-0.6.4\src\os.rs
+
+C:\Repos\Rust\guessing_game\target\debug\deps\rand_core-62dc083736b100e0.d: C:\Users\kodyb\.cargo\registry\src\github.com-1ecc6299db9ec823\rand_core-0.6.4\src\lib.rs C:\Users\kodyb\.cargo\registry\src\github.com-1ecc6299db9ec823\rand_core-0.6.4\src\block.rs C:\Users\kodyb\.cargo\registry\src\github.com-1ecc6299db9ec823\rand_core-0.6.4\src\error.rs C:\Users\kodyb\.cargo\registry\src\github.com-1ecc6299db9ec823\rand_core-0.6.4\src\impls.rs C:\Users\kodyb\.cargo\registry\src\github.com-1ecc6299db9ec823\rand_core-0.6.4\src\le.rs C:\Users\kodyb\.cargo\registry\src\github.com-1ecc6299db9ec823\rand_core-0.6.4\src\os.rs
+
+C:\Users\kodyb\.cargo\registry\src\github.com-1ecc6299db9ec823\rand_core-0.6.4\src\lib.rs:
+C:\Users\kodyb\.cargo\registry\src\github.com-1ecc6299db9ec823\rand_core-0.6.4\src\block.rs:
+C:\Users\kodyb\.cargo\registry\src\github.com-1ecc6299db9ec823\rand_core-0.6.4\src\error.rs:
+C:\Users\kodyb\.cargo\registry\src\github.com-1ecc6299db9ec823\rand_core-0.6.4\src\impls.rs:
+C:\Users\kodyb\.cargo\registry\src\github.com-1ecc6299db9ec823\rand_core-0.6.4\src\le.rs:
+C:\Users\kodyb\.cargo\registry\src\github.com-1ecc6299db9ec823\rand_core-0.6.4\src\os.rs:
