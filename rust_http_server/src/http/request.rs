@@ -1,11 +1,12 @@
 use super::method::{Method, MethodError};
-use super::query_string::{QueryString};
+use super::query_string::QueryString;
 use core::str;
 use std::convert::TryFrom;
 use std::error::Error;
 use std::fmt::{Display, Formatter, Debug, Result as FmtResult};
 use std::str::Utf8Error;
 
+#[derive(Debug)]
 pub struct Request<'buf> {
     path: &'buf str,
     query_string: Option<QueryString<'buf>>,
