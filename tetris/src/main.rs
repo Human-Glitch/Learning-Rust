@@ -12,19 +12,21 @@ use models::{Tetromino, TetrominoType};
 const BLOCK_SIZE: f64 = 20.0;
 const MOVE_INTERVAL: u64 = 500; // Interval in milliseconds for tetromino to move down
 
+const TETROMINO_TYPES: [TetrominoType; 5] = [
+    TetrominoType::T,
+    TetrominoType::O, 
+    TetrominoType::I,
+    TetrominoType::L, 
+    TetrominoType::S
+];
+
 fn main() {
-    let tetromino_types = vec![
-        TetrominoType::T,
-        TetrominoType::O, 
-        TetrominoType::I,
-        TetrominoType::L, 
-        TetrominoType::S];
 
     let mut board_manager = BoardManager::new();
     
     let mut rng = rand::thread_rng();
     let mut current_tetromino = models::Tetromino::new(
-        tetromino_types[rng.gen_range(0..tetromino_types.len())].clone(), 
+        TETROMINO_TYPES[rng.gen_range(0..TETROMINO_TYPES.len())].clone(), 
         board_manager.board.width);
 
     let mut window: PistonWindow = WindowSettings::new(
@@ -34,11 +36,11 @@ fn main() {
             board_manager.board.height as f64 * BLOCK_SIZE + 50.0])
         .exit_on_esc(true)
         .build()
-        .unwrap();
+        .expect("An unknown issue occurred while creating the window");
 
     let mut glyphs = window
         .load_font("/Library/Fonts/Arial Unicode.ttf")
-        .unwrap();
+        .expect("Unable to find the specified font.");
 
     let mut last_update = time::Instant::now();
 
@@ -70,7 +72,7 @@ fn main() {
                         board_manager.score(lines_cleared);
 
                         current_tetromino = Tetromino::new(
-                            tetromino_types[rng.gen_range(0..tetromino_types.len())].clone(),
+                            TETROMINO_TYPES[rng.gen_range(0..TETROMINO_TYPES.len())].clone(),
                             board_manager.board.width);
                     }
                 }
@@ -97,7 +99,7 @@ fn main() {
                 board_manager.score(lines_cleared);
 
                 current_tetromino = Tetromino::new(
-                    tetromino_types[rng.gen_range(0..tetromino_types.len())].clone(),
+                    TETROMINO_TYPES[rng.gen_range(0..TETROMINO_TYPES.len())].clone(),
                     board_manager.board.width);
             }
 
