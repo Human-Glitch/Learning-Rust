@@ -4,6 +4,7 @@ use crate::models::{Board,Tetromino};
 pub struct BoardManager {
     pub board: Board,
     pub score: i32,
+    pub game_over: bool
 }
 
 impl BoardManager {
@@ -11,7 +12,8 @@ impl BoardManager {
     pub fn new() -> BoardManager {
         BoardManager { 
             board: Board::new(),
-            score: 0 
+            score: 0,
+            game_over: false
         }
     }
 
@@ -70,4 +72,15 @@ impl BoardManager {
         self.board = new_board;
         lines_cleared
     }
+
+    pub fn check_game_over(&mut self) -> bool {
+        for x in 0..self.board.width {
+            if self.board.shape[0][x] {
+                self.game_over = true;
+                return true;
+            }
+        }
+        false
+    }
+
 }

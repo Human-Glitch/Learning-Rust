@@ -46,7 +46,6 @@ fn main() {
 
     // Game loop
     while let Some(event) = window.next() {
-        
         // Handle keyboard events
         if let Some(Button::Keyboard(key)) = event.press_args() {
             match key {
@@ -82,12 +81,37 @@ fn main() {
                         board_manager.undo_rotate_tetromino(&mut current_tetromino);
                     }
                 }
+                Key::R => {
+                    if board_manager.game_over {
+                        board_manager.game_over = false;
+                        board_manager.score = 0;
+                        board_manager.board = models::Board::new();
+                        current_tetromino = Tetromino::new(
+                            TETROMINO_TYPES[rng.gen_range(0..TETROMINO_TYPES.len())].clone(),
+                            board_manager.board.width);
+                    }
+                }
+                Key::Q => if board_manager.game_over { break },
                 _ => {}
             }
         }
 
         // Update game cadence
         if last_update.elapsed() >= time::Duration::from_millis(MOVE_INTERVAL) {
+
+            if board_manager.check_game_over() {
+                window.draw_2d(
+                    &event, |c, g, 
+                    device| { 
+                        clear([0.0, 0.0, 0.0, 1.0], g);
+                        Renderer.render_game_over(&board_manager.board, c, g, &mut glyphs);
+                        Renderer.render_score(&board_manager.board, board_manager.score, c, g, &mut glyphs);
+                        glyphs.factory.encoder.flush(device);
+                    });  
+    
+                continue; 
+            }
+
             board_manager.move_tetromino(&mut current_tetromino , 0, 1);
 
             if Physics.check_collision(&board_manager.board, &current_tetromino) {

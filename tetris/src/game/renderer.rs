@@ -73,4 +73,49 @@ impl Renderer {
             .unwrap_or_else(|e| println!("Failed to draw text: {}", e));
     }
 
+    pub fn render_game_over(
+        self, 
+        board: &Board,
+        c: Context, 
+        g: &mut G2d,
+        glyphs: &mut Glyphs) {
+
+        let text = "Game Over";
+        let size = 32;
+        let text_width = glyphs.width(size, text).unwrap();
+
+        let transform = c.transform.trans(
+            board.width as f64 * BLOCK_SIZE / 2.0 - text_width / 2.0, 
+            board.height as f64 * BLOCK_SIZE / 2.0);
+
+        text::Text::new_color(
+            [1.0, 0.0, 0.0, 1.0], 
+            size)
+            .draw(
+                text,
+                glyphs,
+                &c.draw_state,
+                transform,
+                g)
+            .unwrap_or_else(|e| println!("Failed to draw text: {}", e));
+
+        let text2 = "Press R to restart or Press Q to quit";
+        let size2 = 12;
+        let text_width2 = glyphs.width(size2, text2).unwrap();
+        let transform2 = c.transform.trans(
+            board.width as f64 * BLOCK_SIZE / 2.0 - text_width2 / 2.0, 
+            board.height as f64 * BLOCK_SIZE / 2.0 + 20.0);
+
+        text::Text::new_color(
+            [1.0, 1.0, 1.0, 1.0], 
+            size2)
+            .draw(
+                text2,
+                glyphs,
+                &c.draw_state,
+                transform2,
+                g)
+            .unwrap_or_else(|e| println!("Failed to draw text: {}", e));
+    }
+
 }
