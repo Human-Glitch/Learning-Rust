@@ -23,13 +23,10 @@ const TETROMINO_TYPES: [TetrominoType; 5] = [
 ];
 
 fn main() {
-
     let mut board_manager = BoardManager::new();
     
     let mut rng = rand::thread_rng();
-    let mut current_tetromino = models::Tetromino::new(
-        TETROMINO_TYPES[rng.gen_range(0..TETROMINO_TYPES.len())].clone(), 
-        board_manager.board.width);
+    let mut current_tetromino = spawn_new_tetromino(&mut rng, &board_manager);
 
     let mut window: PistonWindow = WindowSettings::new(
         "Tetris", 
