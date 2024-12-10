@@ -8,7 +8,7 @@ pub struct BoardManager {
 }
 
 impl BoardManager {
-
+    
     pub fn new() -> BoardManager {
         BoardManager { 
             board: Board::new(),
@@ -16,7 +16,6 @@ impl BoardManager {
             game_over: false
         }
     }
-
 
     pub fn move_tetromino(self, current_tetromino: &mut Tetromino, dx: i32, dy: i32) {
         current_tetromino.x += dx;
